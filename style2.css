@@ -25,17 +25,14 @@ ul {
   list-style: none;
 }
 
-
-
-
-
-
+/* I tried to start with a mobile responsive first and then added media
+queries for desktop */
 
 nav {
   background-color: var(--nav-bg-clr);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  /* align-items: center; */
   height: var(--nav-height);
   padding: var(--nav-padding);
   color: aliceblue;
@@ -44,28 +41,31 @@ nav {
     width: 100%; */
 }
 
-nav ul {
-  display: flex;
-  justify-content: space-between;
-  width: 60%;
-}
-
 nav #logo {
   font-family: var(--logo-font);
   letter-spacing: 1px;
   font-weight: lighter;
+  font-size: 1.8rem;
+}
+ul,
+li {
+  display: none;
+  /* they should be hidden on small screen */
 }
 
 #burger-label,
 #burger-checkbox {
   position: absolute;
   right: 0;
-  display: none;
+  display: inline;
 
   /* they sould be to the right side of
     nave and hidden by default*/
 
   /* hint: you need positioning and display */
+}
+#burger-checkbox {
+  display: none;
 }
 
 /* when checked change ul to appear again */
@@ -104,16 +104,29 @@ nav #burger-checkbox:checked + ul li {
     height: 300vh;
 } */
 
-@media screen and (max-width: 500px) {
-  ul,
-  li {
+@media screen and (min-width: 1100px) {
+  #burger-label,
+  #burger-checkbox {
     display: none;
-    /* they should be hidden on small screen */
   }
 
-  #burger-label {
-    /* it should appear on small screen */
-    display: inline-block;
-    /* hint: use display */
+  nav {
+    display: flex;
+    justify-content: space-around;
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+  }
+
+  nav ul li {
+    display: inline-flex;
+    font-weight: 900;
+    font-size: 1.2em;
+  }
+  nav #logo {
+    font-size: 2.2rem;
   }
 }
