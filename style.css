@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Lobster&family=Raleway&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --logo-font: "Lobster", cursive;
+    --second-font: "Comfortaa", cursive;
+    --nav-bg-clr: hsl(240, 92%, 71%);
+    --nav-height: 4rem;
+    --nav-padding: 1rem;
+}
+body {
+    background-color: aqua;
+    font-family: "Raleway", sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+nav {
+    background-color: var(--nav-bg-clr);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--nav-height);
+    padding: var(--nav-padding);
+    color: aliceblue;
+    position: relative;
+    /* position: fixed;
+    width: 100%; */
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    background-color: var(--nav-bg-clr);
+}
+
+nav #logo {
+    font-family: var(--logo-font);
+    letter-spacing: 1px;
+    font-weight: lighter;
+}
+
+#burger-label,
+#burger-checkbox {
+
+    /* they sould be to the right side of
+    nave and hidden by default*/
+
+
+    /* hint: you need positioning and display */
+}
+
+
+/* when checked change ul to appear again */
+nav #burger-checkbox:checked + ul {
+     /* 
+        they are hidden so make them
+        appear again when checkbox:checked 
+    */
+
+
+    /* 
+        and give them different styling so 
+        they are flex column and
+        also change positioning because
+        they should be under nav not inside it
+    */
+
+    padding: var(--nav-padding);
+    gap: 2rem;
+    text-align: center;
+    /* hint: you need position, display, and flex-direction */
+}
+nav #burger-checkbox:checked + ul li {
+    /* they are hidden so make them
+    appear again when checkbox:checked  */
+}
+
+/* main {
+    height: 300vh;
+} */
+
+@media screen and (max-width: 500px) {
+    ul,
+    li {
+       /* they should be hidden on small screen */
+    }
+
+    #burger-label {
+       /* it should appear on small screen */
+
+       /* hint: use display */
+    }
+}
