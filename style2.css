@@ -78,7 +78,7 @@ nav #burger-checkbox:checked + ul {
   flex-direction: column;
   position: absolute;
   left: 0;
-  top: 64px;
+  top: 4em;
   width: 100%;
   background-color: var(--nav-bg-clr);
 
