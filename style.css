@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Lobster&family=Raleway&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --logo-font: "Lobster", cursive;
+    --second-font: "Comfortaa", cursive;
+    --nav-bg-clr: hsl(240, 92%, 71%);
+    --nav-height: 4rem;
+    --nav-padding: 1rem;
+}
+body {
+    background-color: aqua;
+    /* general font for the page */
+    font-family: "Raleway", sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+nav {
+    background-color: var(--nav-bg-clr);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--nav-height);
+    padding: var(--nav-padding);
+    color: aliceblue;
+    position: relative;
+    /* position: fixed;
+    width: 100%; */
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    background-color: var(--nav-bg-clr);
+}
+
+nav #logo {
+    font-family: var(--logo-font);
+    letter-spacing: 1px;
+    font-weight: lighter;
+}
+
+/*
+    make them positioned to the right
+    and hidden by default 
+*/
+#burger-label,
+#burger-checkbox {
+    position: absolute;
+    right: 0;
+    display: none;
+}
+
+/*
+    when checkbox is checked make ul positioned
+    and under the nave to left and make them flex column
+*/
+nav #burger-checkbox:checked + ul {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    padding: var(--nav-padding);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+}
+
+/* 
+    just make li appear again when checkbox
+    is checked 
+*/
+nav #burger-checkbox:checked + ul li {
+    display: inline-block;
+}
+/* main {
+    height: 300vh;
+} */
+
+/* 
+    make ul and li hidden on small screens and make 
+    hamburger icon to appear 
+*/
+@media screen and (max-width: 500px) {
+    ul,
+    li {
+        display: none;
+    }
+    /* the label contains the icone */
+    #burger-label {
+        display: inline-block;
+    }
+}
