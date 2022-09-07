@@ -78,6 +78,7 @@ nav #burger-checkbox:checked + ul {
   flex-direction: column;
   position: absolute;
   left: 0;
+  /* when testing on chrome there was some space between the two backgrounds that was not there in firefox. issue fixed by using em instead of px  */
   top: 4em;
   width: 100%;
   background-color: var(--nav-bg-clr);
